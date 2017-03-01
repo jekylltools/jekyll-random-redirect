@@ -1,0 +1,38 @@
+---
+# Jekyll page that redirects to a random post
+# https://github.com/jekylltools/jekyll-random
+# v1.0
+permalink: /random/
+---
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
+    <script type="text/javascript">
+      var posts=[];{% for post in site.posts %}
+      posts.push("{{ site.url }}{{ post.url }}");{% endfor %}
+      var url = posts[Math.floor(Math.random()*posts.length)];
+      var link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      link.setAttribute('href', url);
+      document.head.appendChild(link);
+      if (typeof IE_fix != "undefined") {
+        document.write("Redirecting...");
+        var referLink = document.createElement("a");
+        referLink.href = url;
+        document.body.appendChild(referLink);
+        referLink.click();
+      } else {
+        window.location.replace(url);
+      }
+    </script>
+    <title>Redirecting...</title>
+  </head>
+  <body>
+    <noscript>JavaScript is required to load a random article for you.<br>
+      Please enable JavaScript, then refresh this page.<br><br>
+      <a href="{{ site.url }}">Go back home...</a>
+    </noscript>
+  </body>
+</html>
