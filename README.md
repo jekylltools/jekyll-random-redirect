@@ -9,4 +9,4 @@ Jekyll page that redirects to a random post using Javascript.
 
 ## Support
 
-[Open an issue](https://github.com/jekylltools/jekyll-random/issues) if you have any problems, questions or suggestions for improvement.
+[Open an issue](https://github.com/jekylltools/jekyll-random-redirect/issues) if you have any problems, questions or suggestions for improvement.
