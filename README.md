@@ -1,6 +1,6 @@
 # Jekyll Random Redirect
 
-Jekyll page that redirects to a random post using Javascript.
+Jekyll page that redirects to a random post using Javascript with fall back to a meta refresh redirect. Fully compatible with Github Pages.
 
 ## Usage
 
