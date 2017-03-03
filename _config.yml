@@ -1,0 +1,16 @@
+# Config settings
+title: Jekyll Random Redirect Demo
+baseurl: "/jekyll-random-redirect"
+
+# Random redirect settings
+random_redirect:
+  pages: true
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
