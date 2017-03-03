@@ -1,7 +1,7 @@
 ---
 # Jekyll page that redirects to a random page, post or document
 # https://github.com/jekylltools/jekyll-random-redirect
-# v1.2
+# v1.3
 title: Random
 permalink: /random/
 ---
@@ -16,7 +16,7 @@ permalink: /random/
     {% endunless %}
   {% endfor %}
 {% endif %}
-{% if site.random_redirect.collections == true %}
+{% if site.random_redirect.documents == true %}
   {% for document in site.documents %}
     {% assign docs = docs | push: document | uniq %}
   {% endfor %}
