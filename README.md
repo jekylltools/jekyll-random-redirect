@@ -9,12 +9,12 @@ View a [live demo running on Github Pages](https://jekylltools.github.io/jekyll-
 1. Add `random.html` to the site.
 2. Rebuild the site, then visit the page and you'll be redirected to a random post.
 
-By default, the page will redirect only to posts. You can include pages and documents in collections by adding a setting in `_config.yml`
+By default, the page will redirect only to posts. You can include pages and documents from collections by adding a setting in `_config.yml`
 
 ```
 random_redirect:
   pages: true
-  collections: true
+  documents: true
 ```
 
 ## Support
