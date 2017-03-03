@@ -1,18 +1,32 @@
 ---
 # Jekyll page that redirects to a random post
 # https://github.com/jekylltools/jekyll-random-redirect
-# v1.0
+# v1.1
 permalink: /random/
 ---
+{% assign docs = "" | split: "" %}
+{% for post in site.posts %}
+  {% assign docs = docs | push: post | uniq %}
+{% endfor %}
+{% if site.random_redirect.include.pages == true %}
+  {% for page in site.html_pages %}
+    {% assign docs = docs | push: page | uniq %}
+  {% endfor %}
+{% endif %}
+{% if site.random_redirect.include.collections == true %}
+  {% for document in site.documents %}
+    {% assign docs = docs | push: document | uniq %}
+  {% endfor %}
+{% endif %}
 <!doctype html>
 <html>
   <head>
     <meta charset="utf-8">
     <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
     <script type="text/javascript">
-      var posts=[];{% for post in site.posts %}
-      posts.push("{{ site.url }}{{ post.url }}");{% endfor %}
-      var url = posts[Math.floor(Math.random()*posts.length)];
+      var urls=[];{% for doc in docs %}
+      urls.push("{{ doc.url | absolute_url }}");{% endfor %}
+      var url = urls[Math.floor(Math.random()*urls.length)];
       var link = document.createElement('link');
       link.setAttribute('rel', 'canonical');
       link.setAttribute('href', url);
