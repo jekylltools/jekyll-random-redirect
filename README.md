@@ -13,9 +13,8 @@ By default, the page will redirect only to posts. You can include pages and docu
 
 ```
 random_redirect:
-  include:
-  	pages: true
-    collections: true
+  pages: true
+  collections: true
 ```
 
 ## Support

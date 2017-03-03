@@ -1,19 +1,22 @@
 ---
-# Jekyll page that redirects to a random post
+# Jekyll page that redirects to a random page, post or document
 # https://github.com/jekylltools/jekyll-random-redirect
-# v1.1
+# v1.2
+title: Random
 permalink: /random/
 ---
 {% assign docs = "" | split: "" %}
 {% for post in site.posts %}
   {% assign docs = docs | push: post | uniq %}
 {% endfor %}
-{% if site.random_redirect.include.pages == true %}
+{% if site.random_redirect.pages == true %}
   {% for page in site.html_pages %}
-    {% assign docs = docs | push: page | uniq %}
+    {% unless page.title == "Random" %}
+      {% assign docs = docs | push: page | uniq %}
+    {% endunless %}
   {% endfor %}
 {% endif %}
-{% if site.random_redirect.include.collections == true %}
+{% if site.random_redirect.collections == true %}
   {% for document in site.documents %}
     {% assign docs = docs | push: document | uniq %}
   {% endfor %}
@@ -44,7 +47,7 @@ permalink: /random/
     <title>Redirecting...</title>
   </head>
   <body>
-    <noscript>JavaScript is required to load a random article for you.<br>
+    <noscript>JavaScript is required to load a random page for you.<br>
       Please enable JavaScript, then refresh this page.<br><br>
       <a href="{{ site.url }}">Go back home...</a>
     </noscript>
