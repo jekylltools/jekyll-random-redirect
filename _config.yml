@@ -1,0 +1,4 @@
+# Random redirect settings
+random_redirect:
+  pages: false
+  documents: false
