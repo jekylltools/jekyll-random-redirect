@@ -1,7 +1,7 @@
 ---
 # Jekyll page that redirects to a random page, post or document
 # https://github.com/jekylltools/jekyll-random-redirect
-# v1.4
+# v1.5
 title: Random
 layout: none
 permalink: /random/
@@ -28,8 +28,10 @@ permalink: /random/
     <meta charset="utf-8">
     <!--[if lt IE 9]><script type="text/javascript">var IE_fix=true;</script><![endif]-->
     <script type="text/javascript">
-      var urls=[];{%- for doc in docs -%}
-      urls.push("{{ doc.url | absolute_url }}");{%- endfor -%}
+      var urls=[];
+      {% for doc in docs -%}
+      urls.push("{{ doc.url | absolute_url }}");
+      {% endfor -%}
       var url = urls[Math.floor(Math.random()*urls.length)];
       var link = document.createElement('link');
       link.setAttribute('rel', 'canonical');
