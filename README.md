@@ -16,7 +16,3 @@ random_redirect:
   pages: true
   documents: true
 ```
-
-## Support
-
-[Open an issue](https://github.com/jekylltools/jekyll-random-redirect/issues) if you have any problems, questions or suggestions for improvement.
